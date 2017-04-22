@@ -1,0 +1,21 @@
+<html>
+<body>
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!--Have to change data-href before deployment-->
+<!--Like Box Code  -->
+<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/"
+data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+
+<!--Comment Box Code  -->
+<div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="500px"
+data-numposts="10"></div>
+</body>
+</html>

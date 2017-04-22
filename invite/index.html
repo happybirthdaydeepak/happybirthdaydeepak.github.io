@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Party Tonight !!</title>
+		<meta name="description" content="Invite yourself for the party tonight" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<center>
+				<h1>Invite yourself for an awesome party tonight !! </h1>
+			</center>
+			<!-- Top Navigation -->
+			<section style="padding:0;">
+				<img src="party.gif" alt="">
+				<form id="theForm" class="simform" autocomplete="off" style="padding:1em 0 1em 0;">
+					<div class="simform-inner">
+						<ol class="questions">
+							<li>
+								<span><label for="q1">Your name</label></span>
+								<input id="q1" name="q1" type="text"/>
+							</li>
+							<li>
+								<span><label for="q2">Your Email or Mobile Number</label></span>
+								<input id="q2" name="q2" type="text"/>
+							</li>
+							<li>
+								<span><label for="q3">Message for Deepak</label></span>
+								<input id="q3" name="q3" type="text"/>
+							</li>
+						</ol><!-- /questions -->
+						<button class="submit" type="submit">Send answers</button>
+						<div class="controls">
+							<button class="next"></button>
+							<div class="progress"></div>
+							<span class="number">
+								<span class="number-current"></span>
+								<span class="number-total"></span>
+							</span>
+							<span class="error-message"></span>
+						</div><!-- / controls -->
+					</div><!-- /simform-inner -->
+					<span class="final-message"></span>
+				</form><!-- /simform -->
+			</section>
+		</div><!-- /container -->
+		<script src="js/classie.js"></script>
+		<script src="js/stepsForm.js"></script>
+		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.0.min.js"></script>
+		<script>
+
+		var theForm = document.getElementById( 'theForm' );
+
+      new stepsForm( theForm, {
+        onSubmit : function( form ) {
+          // hide form
+          classie.addClass( theForm.querySelector( '.simform-inner' ), 'hide' );
+          //console.log("Submitted Request");
+
+          var link="https://docs.google.com/forms/d/e/1FAIpQLScp72tfKCFXIXaaaxDbcerLHpE_rqH_A33DjJ71j5xDoOXOzA/formResponse";
+          jQuery.ajax({
+                url: link,
+                data: {"entry.590099730" : $("#q2").val() , "entry.853539917" : $("#q3").val() , "entry.1908296720" : $("#q1").val() },
+                type: "POST",
+                dataType: "xml",
+                crossDomain:true,
+                statusCode: {
+                    0: function (){
+                        //console.log("response 0");
+                    },
+                    200: function (){
+                         //console.log("response 200");
+                    }
+                }
+            });
+
+          // let's just simulate something...
+          var messageEl = theForm.querySelector( '.final-message' );
+					messageEl.innerHTML = 'Thanks for your input! <br>We\'ve notified Deepak. <br><br>He\'ll soon invite you for party tonight.';
+          classie.addClass( messageEl, 'show' );
+        }
+      } );
+		</script>
+	</body>
+</html>

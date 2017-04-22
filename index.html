@@ -20,7 +20,7 @@
 		<div class="container">
 			<canvas id="snowfall"></canvas>
 			<div id="merrywrap" class="merrywrap">
-				<div class="giftbox">
+				<div class="giftbox" onclick="play()">
 					<div class="cover">
 						<div></div>
 					</div>
@@ -132,6 +132,8 @@
 									C30.431,26.496,30.209,26.275,29.939,26.275z"/>
 							</svg>
 						</span>
+						<span class="letter" style="cursor:pointer;" onclick="openInvitePage()"><img src="img/partyy.png"  style="width:100%;" alt="Party"></span>
+
 						<span>
 							<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 50 50">
 								<polygon points="24.148,14.308 25.084,14.086 25.798,14.731 25.875,13.774 26.709,13.293 25.821,12.923 25.623,11.982
@@ -167,16 +169,6 @@
 							</svg>
 						</span>
 						<span class="letter" style="cursor:pointer;" onclick="openGiftbox()"><img src="img/gift.png"  style="width:100%;" alt="Gift"></span>
-						<span>
-							<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 50 50">
-								<path d="M35.167,24.999c0,5.615-20.333,5.615-20.333,0c0-5.614,4.552-10.166,10.166-10.166
-									C30.615,14.833,35.167,19.385,35.167,24.999z"/>
-								<path d="M32.967,32.224l-0.277-3.278c-2.1,0.859-4.899,1.266-7.688,1.266s-5.59-0.406-7.689-1.266l-0.277,3.278
-									c-0.134,1.092,0.658,1.985,1.758,1.985h4.014v-0.974c0-1.211,0.982-2.193,2.193-2.193c1.212,0,2.194,0.982,2.194,2.193v0.974h4.016
-									C32.309,34.209,33.101,33.315,32.967,32.224z"/>
-								<circle cx="25.959" cy="33" r="0.5"/>
-							</svg>
-						</span>
 						<span>
 							<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 50 50">
 								<circle cx="14.31" cy="19.969" r="0.88"/>
@@ -1503,14 +1495,26 @@
 		</div>
 		<!-- /container -->
 		<script type="text/javascript">
+			function openInvitePage() {
+					window.open("invite","_blank");
+			}
 
 			function openGiftbox() {
-				window.location.href="pass/index4.html";
+				window.open("pass/index4.html","_blank");
 			}
 		</script>
 		<script src="js/rectangleEmitter.js"></script>
 		<script src="js/snow.js"></script>
 		<script src="js/classie.js"></script>
 		<script src="js/main.js"></script>
+		<script>
+  function play(){
+			console.log("Start Magic !!")
+       var audio = document.getElementById("audio");
+       audio.play();
+                 }
+   </script>
+
+<audio id="audio" src="hbd.mp3" type="audio/mpeg" loop="loop"></audio>
 	</body>
 </html>
