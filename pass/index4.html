@@ -78,33 +78,39 @@
         var hexaDemo5,
             set = [
                 {
-                    value: 'I',
+                    value: 'A',
                     style: {
                         backgroundColor: '#4585f2'
                     }
                 },
                 {
-                    value: '♥',
+                    value: 'I',
                     style: {
                         backgroundColor: '#8b0000'
                     }
                 },
                 {
-                    value: 'Y',
+                    value: 'N',
                     style: {
-                        backgroundColor: '#00c10d'
+                        backgroundColor: '#1abc9c'
                     }
                 },
                 {
-                    value: 'O',
+                    value: 'S',
                     style: {
                         backgroundColor: '#f94a32'
                     }
                 },
                 {
-                    value: 'U',
+                    value: 'T',
                     style: {
                         backgroundColor: '#d4004b'
+                    }
+                },
+                {
+                  value: 'U',
+                    style: {
+                        backgroundColor: '#00c10d'
                     }
                 }
             ];
@@ -112,11 +118,11 @@
             var submit = document.getElementById('submit'),
                 output = document.getElementById('output');
             hexaDemo5 = new HexaFlip(document.getElementById('hexaflip-demo5'),
-                {set1: set, set2: set, set3: set, set4: set, set5: set},
-                {fontSize: 120, margin: 4, perspective: 1000}
+                {set1: set, set2: set, set3: set, set4: set, set5: set, set6: set},
+                {fontSize: 100, margin: 4, perspective: 1000}
             );
             submit.addEventListener('click', function(){
-                if(hexaDemo5.getValue().join(' ') === 'I ♥ Y O U'){
+                if(hexaDemo5.getValue().join(' ') === 'S U N I T A'){
                     output.innerHTML = 'password correct!';
                     hexaDemo5.flip();
                     hexaDemo5.flip();
@@ -127,7 +133,7 @@
                     hexaDemo5.flip();
                     hexaDemo5.flip();
 					setTimeout(function () {
-   window.location.href = " ../StackSlider/index.html"; //will redirect to your blog page (an ex: blog.html)
+   window.location.href = " ../deepika/index.html"; //will redirect to your blog page (an ex: blog.html)
 }, 2000);
                 }else{
                     output.innerHTML = 'password incorrect.';
